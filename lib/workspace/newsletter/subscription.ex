@@ -9,7 +9,7 @@ defmodule Workspace.Newsletter.Subscription do
   end
 
   @doc false
-  def changeset(subscription, attrs) do
+  def changeset(subscription, attrs \\ %{}) do
     subscription
     |> cast(attrs, [:email])
     |> validate_required([:email])
