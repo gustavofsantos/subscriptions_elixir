@@ -11,7 +11,9 @@ defmodule WorkspaceWeb.PageController do
   end
 
   def success(conn, _params) do
-    conn |> render("success.html")
+    conn
+    |> put_status(201)
+    |> render("success.html")
   end
 
   def subscribe(conn, params) do

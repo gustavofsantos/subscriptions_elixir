@@ -11,7 +11,7 @@ defmodule Workspace.NewsletterFixtures do
     {:ok, subscription} =
       attrs
       |> Enum.into(%{
-        email: "some email"
+        email: "email@email.com"
       })
       |> Workspace.Newsletter.create_subscription()
 

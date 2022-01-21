@@ -21,10 +21,10 @@ defmodule Workspace.NewsletterTest do
     end
 
     test "create_subscription/1 with valid data creates a subscription" do
-      valid_attrs = %{email: "some email"}
+      valid_attrs = %{email: "email@email.com"}
 
       assert {:ok, %Subscription{} = subscription} = Newsletter.create_subscription(valid_attrs)
-      assert subscription.email == "some email"
+      assert subscription.email == "email@email.com"
     end
 
     test "create_subscription/1 with invalid data returns error changeset" do
@@ -33,10 +33,10 @@ defmodule Workspace.NewsletterTest do
 
     test "update_subscription/2 with valid data updates the subscription" do
       subscription = subscription_fixture()
-      update_attrs = %{email: "some updated email"}
+      update_attrs = %{email: "new-emailW@email.com"}
 
       assert {:ok, %Subscription{} = subscription} = Newsletter.update_subscription(subscription, update_attrs)
-      assert subscription.email == "some updated email"
+      assert subscription.email == "new-emailW@email.com"
     end
 
     test "update_subscription/2 with invalid data returns error changeset" do
