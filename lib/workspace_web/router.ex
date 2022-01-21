@@ -20,6 +20,8 @@ defmodule WorkspaceWeb.Router do
     get "/", PageController, :index
     post "/", PageController, :subscribe
     get "/success", PageController, :success
+
+    live "/watch", SubscriptionsLive
   end
 
   # Other scopes may use custom stacks.

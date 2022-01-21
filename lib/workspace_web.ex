@@ -39,6 +39,8 @@ defmodule WorkspaceWeb do
 
       # Include shared imports and aliases for views
       unquote(view_helpers())
+
+      import Phoenix.LiveView.Helpers
     end
   end
 

@@ -8,6 +8,12 @@ defmodule Workspace.Newsletter do
 
   alias Workspace.Newsletter.Subscription
 
+  @topic "subscriptions"
+
+  def subscribe do
+    Phoenix.PubSub.subscribe(Workspace.PubSub, @topic)
+  end
+
   @doc """
   Returns the list of subscriptions.
 
@@ -53,6 +59,7 @@ defmodule Workspace.Newsletter do
     %Subscription{}
     |> Subscription.changeset(attrs)
     |> Repo.insert()
+    |> broadcast!(:subscription_created)
   end
 
   @doc """
@@ -100,5 +107,17 @@ defmodule Workspace.Newsletter do
   """
   def change_subscription(%Subscription{} = subscription, attrs \\ %{}) do
     Subscription.changeset(subscription, attrs)
+  end
+
+  def broadcast!({:ok, subscription}, event) do
+    message = {event, subscription}
+
+    Phoenix.PubSub.broadcast(
+      Workspace.PubSub,
+      @topic,
+      message
+    )
+
+    {:ok, subscription}
   end
 end
