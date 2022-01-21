@@ -9,7 +9,7 @@ config :workspace, Workspace.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "workspace_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
