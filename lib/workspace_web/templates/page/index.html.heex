@@ -1,41 +1,20 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
-</section>
+<section id="newsletter-subscription" class="flex flex-col space-y-6 w-full md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+  <h1 class="text-2xl lg:text-4xl text-center font-bold">My Awesome Newsletter</h1>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.6/CHANGELOG.md">v1.6 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://web.libera.chat/#elixir">#elixir on Libera Chat (IRC)</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-      <li>
-        <a href="https://discord.gg/elixir">Elixir on Discord</a>
-      </li>
-    </ul>
-  </article>
+  <form class="flex flex-col justify-center items-center w-full">
+    <fieldset class="flex flex-col w-full space-y-2 lg:w-4/6">
+      <input
+        name="email"
+        type="email"
+        placeholder="Your e-mail"
+        required="true"
+        class="form-input rounded-md outline-none focus:border-orange-500"
+      />
+      <button
+        class="bg-orange-500 border border-orange-700 rounded-md font-bold p-2"
+      >
+        Submit
+      </button>
+    </fieldset>
+  </form>
 </section>
