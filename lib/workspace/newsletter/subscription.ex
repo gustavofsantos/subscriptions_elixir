@@ -13,6 +13,7 @@ defmodule Workspace.Newsletter.Subscription do
     subscription
     |> cast(attrs, [:email])
     |> validate_required([:email])
+    |> unique_constraint(:email)
     |> validate_format(:email, ~r/@/)
   end
 end

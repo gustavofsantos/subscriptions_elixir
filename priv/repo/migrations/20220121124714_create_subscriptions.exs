@@ -7,5 +7,7 @@ defmodule Workspace.Repo.Migrations.CreateSubscriptions do
 
       timestamps()
     end
+
+    create unique_index(:subscriptions, [:email])
   end
 end
